@@ -1,7 +1,6 @@
-# File used for testing purposes
+# Opens database (a csv file) and reads each row.
 
 from header import *
-
 
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'
@@ -38,7 +37,3 @@ with open(database + sub_10, 'r') as gen_data:
                 break
             else:
                 subscription_list.append(parent(row))
-
-#print(subscription_list.account)
-
-

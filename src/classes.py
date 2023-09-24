@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 # Constructors for heirarchy
 
 # Creates Ultimate Parent (or root parent)
@@ -47,7 +43,7 @@ class parent:
         return ret
 
 class account:
-    def __int__(self, name, account_type):
+    def __int__(self, name):
         self.name = name
         self.account_type = account_type # Allows for different account types
         self.account_labels = [] # Stores lable of columns 
@@ -56,6 +52,27 @@ class account:
     # Helper function meant to be generated one row of a CSV file
     def add_account(self, data):
         self.account.append(data)
+
+
+
+
+
+########################################################################################################################
+# Below are classes version 2
+########################################################################################################################
+
+class accountV2:
+    def __int__(self, id, parent_id, name, ultimate_parent_id, arr, hierarchy_arr):
+        self.name = name
+        self.id = id
+        self.parent_id = parent_id
+        self.name = name
+        self.ultimate_parent_id = ultimate_parent_id
+        self.arr = arr
+        self.hierarchy_arr = hierarchy_arr
+
+
+
 
 
 

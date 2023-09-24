@@ -1,0 +1,13 @@
+This is a journal of work accomplished on what day.
+
+9/19/23
+Added classes and heirarchy files.
+
+9/21/23
+Added methods.py to create classes used in project
+
+9/24/23
+Added active_subscriptions, header, methods, item_revenue, and file_reader files. 
+Revised how databases are read. Also did some organization of the program (segregated methods into file).
+I will most likely need to merge method files together. For testing its easier to keep them seperated For
+now. 
