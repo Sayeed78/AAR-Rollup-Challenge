@@ -1,7 +1,9 @@
-# Opens database (a csv file) and reads each row.
+# Creating a file_reader function can eliminte repeated code.
+# Currently every method opens a new instance of a file.
+# This function opens database (a csv file) and reads each row. 
+# Unfinished.
 
 from header import *
-
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'
 subscriptions= '.\subscriptions.py'
@@ -11,7 +13,6 @@ subscriptions= '.\subscriptions.py'
 sub_10 = '.\subscription_10.py'
 sub_5 = '.\subscription_5.py'
 '''
-
 
 def file_reader(file):
     with open(database + file, 'r') as data:

@@ -15,7 +15,7 @@ class ultimate_parent:
         child.ultimate_parent(self)
         child.parent.append(self)
 
-
+    # Method produces heiarchy of children when print() is called on object
     def __str__(self, level=0):
         ret = "\t" * level + self.account + "\n"
         for child in self.children:
@@ -30,12 +30,12 @@ class parent:
         self.parent = parent
         self.children = []
 
-
     def add_child(self, child):
         self.children.append(child)
         child.ultimate_parent = self.ultimate_parent
         child.parent.append(self)
 
+    # Method produces heiarchy of children when print() is called on object
     def __str__(self, level=0):
         ret = "\t" * level + self.name + "\n"
         for child in self.children:
@@ -55,10 +55,8 @@ class account:
 
 
 
-
-
 ########################################################################################################################
-# Below are classes version 2
+# Below is version 2 of the classes object
 ########################################################################################################################
 
 class accountV2:
@@ -70,51 +68,7 @@ class accountV2:
         self.ultimate_parent_id = ultimate_parent_id
         self.arr = arr
         self.hierarchy_arr = hierarchy_arr
-
-
-
-
-
-
-# Methods for extracting data
-
-
-
-
-
-
-
-
-
-# Unneccassy class
-'''
-# Creates Child class (bottom of heirarchy with no children)
-class child:
-    def __init__(self, name):
-        self.name = name
-        self.parent = parent 
-
-    def __str__(self, level=0):
-        ret = "\t" * level + self.name + "\n"
-        for child in self.children:
-            ret += child.__str__(level + 1)
-        return ret
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 ########################################################################################################################
 # Below are unused methods that can be used to expand this program, such as allowing multiple parents.
 ########################################################################################################################
