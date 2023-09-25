@@ -1,8 +1,5 @@
-# File contains methods used in this project
-
-
-
-# Constructors for heirarchy
+# File contains Constructors for heirarchy of the accounts
+# There is no child class. The idea is to create a heirarchy of accounts.
 
 # Creates Ultimate Parent (or root parent)
 class ultimate_parent:
@@ -22,7 +19,7 @@ class ultimate_parent:
             ret += child.__str__(level + 1)
         return ret
 
-# Creates Parent class (has children)
+# Creates Parent class
 class parent:
     def __init__(self, account):
         self.account = account
@@ -46,17 +43,18 @@ class account:
     def __int__(self, name):
         self.name = name
         self.account_type = account_type # Allows for different account types
-        self.account_labels = [] # Stores lable of columns 
+        self.account_labels = [] # Stores labels of columns 
         self.account_data = [] # Stores data of columns
         
     # Helper function meant to be generated one row of a CSV file
+    # In progress
     def add_account(self, data):
         self.account.append(data)
 
 
 
 ########################################################################################################################
-# Below is version 2 of the classes object
+# Below is version 2 of the classes object to potentially make the class simpler.
 ########################################################################################################################
 
 class accountV2:
@@ -70,7 +68,7 @@ class accountV2:
         self.hierarchy_arr = hierarchy_arr
         
 ########################################################################################################################
-# Below are unused methods that can be used to expand this program, such as allowing multiple parents.
+# Below are unused methods that can be used to expand this program, primarily to allow multiple parents.
 ########################################################################################################################
 
 
