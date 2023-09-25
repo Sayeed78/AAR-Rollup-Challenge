@@ -20,4 +20,10 @@ The revenue function is still in progress.
 
 I chose to use phython for this project mainly because the timeframe given to me and how fast I thought
 I could get this finished. In practice phython is not as efficient as other languages. Prefered languages
-would be SQL and/or C++.
+would be SQL and/or C++. There are also many other ways to a make the program more effecient.
+
+
+My approach for this project is to add each account into a account class that stores necessary information about the account. 
+Then create a heirarchy of parent/child account using a different class. The end result will ideally be a tree of 
+accounts that can easily be accessed. So when a report needs to be pulled, a function can easily parse through the 
+heirarchy tree to generate the requested data. 
