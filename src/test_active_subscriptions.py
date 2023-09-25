@@ -1,16 +1,26 @@
 # tests active subscriptions
 
-from datetime import *
-import csv
-from classes import *
-from active_subscription import *
+from header import *
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'
+subscriptions = '.\subscriptions.py'
+
+# Testing variables
 sub_10 = '.\subscription_10.py'
 sub_5 = '.\subscription_5.py'
 
-with open(database + sub_10, 'r') as gen_data:
-    reader = csv.reader(gen_data)
+i = 0
+while i < 10:
+    if (active_subscription()):
+          print('true')
+    else:
+         print('false')
+    i += 1
+
+
+'''
+with open(database + sub_10, 'r') as data:
+    reader = csv.reader(data)
     line_count = 1
 
     for row in reader:
@@ -19,16 +29,10 @@ with open(database + sub_10, 'r') as gen_data:
             line_count += 1
             continue
 
+        # strips unnecessary whitespace/characters
         end_date = (row[3].rstrip("]").strip(" ").rstrip(" '").strip("' "))
-        
+
         boolean = active_subscription(end_date)
 
         print(boolean)
-
-        # Parse the date string into a date object
-        #parsed_date = datetime.datetime.strptime(string, '%Y-%m-%d').date()
-
-        #print(string)
-        #print(parsed_date > datetime.date.today())
-
-        #active_subscription(string)
+        '''
