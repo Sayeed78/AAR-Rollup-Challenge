@@ -15,6 +15,9 @@ ids = '.\ids.csv'
 labels = []
 rows = []
 
+# Testing variables
+sub_10 = '.\subscription_10.csv'
+sub_5 = '.\subscription_5.csv'
 
 #def file_cleaner(file):
 with open(database + file, 'r') as data:
@@ -38,3 +41,10 @@ for row in rows[:5]:
 
 
 
+'''
+        with open(database + ids, 'a') as output:
+            for row[:5] in reader: 
+                rows.append(row)
+                #print(row, file = output)
+'''
+        

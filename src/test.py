@@ -1,20 +1,20 @@
 # File used for testing purposes
 
-from header import *
+import csv
 
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'
 sub = '\subscriptions.csv'
 sub_items = '\subscription_items.csv'
-sub_10 = '.\subscription_10.py'
-sub_5 = '.\subscription_5.py'
-sub_items_10 = '.\subscription_items_5.py'
+sub_10 = '.\subscription_10.csv'
+sub_5 = '.\subscription_5.csv'
+sub_items_10 = '.\subscription_items_5.csv'
 
 
 with open(database + sub_items, 'r') as csvfile:
     reader = csv.reader(csvfile)
     line_count = 0
-    with open(database + sub_items_10, 'a') as output:
+    with open(database + sub_items_10, 'w') as output:
         for row in reader:
             # Each row is a list of values from the CSV file
             print(row, file = output)

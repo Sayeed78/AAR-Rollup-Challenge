@@ -1,7 +1,6 @@
-from classes.py import *
-
 # File contains functions for datastructures relating to the hierarchy of the accounts.accounts
 
+from classes.py import *
 import csv
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'

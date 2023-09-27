@@ -11,10 +11,8 @@ sub_5 = '.\subscription_5.py'
 
 i = 0
 while i < 10:
-    if (active_subscription()):
-          print('true')
-    else:
-         print('false')
+    boolean = active_subscription()
+    
     i += 1
 
 

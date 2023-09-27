@@ -1,67 +1,54 @@
 # Calculates the revenu for each subscription item
 # The three data points are quantity, list_price, and discount from subscription_items.csv
 
-from header import *
+import csv
+import datetime
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'
-data = '\subscription_items_5.py'
+#data = '\subscription_items_5.csv'
+data = '\subscription_items.csv'
+output = 'revenue.csv'
 file = database + data
+outputfile = database + output
 
 id =''
 quantity = 0
 list_price = 0
 discount = 0
-revenue = 0
+id_revenue = []
 string = ''
-with open(database + data, 'r') as csvfile:
-    reader = csv.reader(csvfile)
-    line_count = 0
+labels = []
+accounts = []
+end_date = ''
 
-    for row in reader:
-         # skip labels row
-        if line_count == 0:
-            line_count += 1
-            continue
+with open(file, 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        labels = next(reader)
 
-        string = row[4].lstrip("[").rstrip("]").rstrip(" ").lstrip(" ").strip('"')
-        print(string)
-        quantity = int(string)
+        # Get the current date
+        current_date = datetime.date.today()
+        
+        for row in reader: 
+                #accounts.append(row)
 
-        if line_count == 5:
+                # strips unnecessary whitespace/characters
+                end_date = (row[7].rstrip("]").strip(" ").strip("'").strip("'"))
+                parsed_date = datetime.datetime.strptime(end_date, "%Y-%m-%d").date()
 
-'''
-        print(
-        row[0].lstrip("[").rstrip("]").rstrip(" ").lstrip(" ").strip('"'), 
-        row[1].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'), 
-        row[2].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'), 
-        row[3].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'), 
-        row[4].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'), 
-        row[5].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'), 
-        row[6].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'),
-        row[7].lstrip("[").rstrip("]").strip(" ").lstrip(" ").strip('"'),
-        )
-'''
-
-
+                # if the subscription is active, calculate revenue
+                id = row[0].strip(" ").strip("'").strip("[").strip("]").strip("'")
+                if (parsed_date > current_date):
+                        quantity = int(row[3].strip(" ").strip("'"))
+                        list_price = int(row[4].strip(" ").strip("'"))
+                        discount = float(row[5].strip(" ").strip("'").strip("]"))
+                        revenue = quantity * list_price * discount
+                        id_revenue.append([id, revenue])
+                else:
+                        id_revenue.append([id, 0])
 
 
-        #quantity = int(row[3])
-        #list_price = int(row[4])
-        #discount = int(row[5])
-
-        #string = (row[3].rstrip("]").strip(" ").lstrip(" "))
-        #list_price = (row[4].rstrip("]").strip(" "))
-        #discount = (row[5].rstrip("]").strip(" "))
-
-        #quantity = float(string)
-
-
-        #print(row[0], row[3], row[4], row[5])
-
-        #print(quantity, list_price, discount)
-
-        #revenue = quantity * list_price * discount
-
-        #print(string)
-
-
+for row in id_revenue:
+    # parsing each column of a row
+    for col in row:
+        print("%10s"%col,end=" "),
+    print('\n')

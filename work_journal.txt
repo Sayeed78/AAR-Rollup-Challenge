@@ -11,3 +11,7 @@ Added active_subscriptions, header, methods, item_revenue, and file_reader files
 Revised how databases are read. Also did some organization of the program (segregated methods into file).
 I will most likely need to merge method files together. For testing its easier to keep them seperated For
 now. 
+
+9/25/23
+Started implementing item_revenue function that calculates the revenue of an account. Also cleaned
+up some folders.
