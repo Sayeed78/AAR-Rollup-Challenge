@@ -15,3 +15,41 @@ now.
 9/25/23
 Started implementing item_revenue function that calculates the revenue of an account. Also cleaned
 up some folders.
+
+10/3
+Here is the general flow of the program to generate account revenue, heirarchy parents, and heirarchy revenue.
+
+################################################################################################################################
+
+generate dictionary:
+
+    Parse through accounts and add ids to dictionary
+
+################################################################################################################################
+
+account revenue:
+
+    Create a dictionary that has account_id and revenue.
+    Parse through subscriptions and if they are active then, 
+    parse through subscription_items to check if they are active then,
+    if subscription_items is active, then generate a running_revenue_total for subscription_revenue.
+        
+        # sudo code
+        accounts = {}
+        for sub in subscriptions:
+            if sub is active, then:
+                for item in subscription_items:
+                    if item is active, then:
+                        #calculate revenue, add to running_revenue_total, then add to the dictionary
+                        calculate revenue 
+                        running_revenue_total += subscription_revenue_total
+                        
+                # add running_revenue_total to subscription_total_revenue
+                subscription_total_revenue += running_revenue_total
+        accounts[i] = {"id" : id, "revenue" : subscription_revenue_total}
+
+################################################################################################################################
+    
+
+    Create a dictionary that contains account_id and revenue
+        parse through accounts and generate dictionary
