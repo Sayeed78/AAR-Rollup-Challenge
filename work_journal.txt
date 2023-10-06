@@ -19,6 +19,9 @@ up some folders.
 10/3
 Here is the general flow of the program to generate account revenue, heirarchy parents, and heirarchy revenue.
 
+10/6
+Continued writing sudo code for the flow
+
 ################################################################################################################################
 
 generate heirarchy dictionary:

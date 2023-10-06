@@ -1,6 +1,7 @@
 # File used for testing purposes
 
 import csv
+import string_hash as sh
 
 
 database = 'F:\Sohail Sayeed\Repos\AAR-Rollup-Challenge\database'
@@ -10,10 +11,13 @@ sub_10 = '.\subscription_10.csv'
 sub_5 = '.\subscription_5.csv'
 sub_items_10 = '.\subscription_items_5.csv'
 
+dictionary = {}
+
 
 with open(database + sub_items, 'r') as csvfile:
     reader = csv.reader(csvfile)
     line_count = 0
+    reader = next(reader)
     with open(database + sub_items_10, 'w') as output:
         for row in reader:
             # Each row is a list of values from the CSV file
@@ -22,6 +26,14 @@ with open(database + sub_items, 'r') as csvfile:
 
             if line_count >= 10:
                 break
+            
+            hash_reference = sh.string_hash(row[1])
+            dictionary[row[1]] = hash_reference
+
+print(dictionary)
+
+
+
 
 '''
 subscription_list = []

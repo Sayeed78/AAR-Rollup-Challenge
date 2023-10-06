@@ -23,9 +23,11 @@ with open(database + file, 'r') as data:
         labels = next(reader)
         for row in reader: 
                 rows.append(row)
-        print("Total no. of rows: %d"%(reader.line_num))
+        #print("Total no. of rows: %d"%(reader.line_num))
 
- 
+
+# Testing purposes Below
+'''
 # printing the field names
 print('Label names are:' + ', '.join(label for label in labels))
 
@@ -35,6 +37,6 @@ for row in rows[:5]:
     for col in row:
         print("%10s"%col,end=" "),
     print('\n')
-
+'''
 
 
