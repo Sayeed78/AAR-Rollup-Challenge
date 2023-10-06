@@ -18,8 +18,8 @@ with open('accounts.csv', mode='r') as file:
         arr = row['arr']
         hierarchy_arr = row['hierarchy_arr']
 
-        # Parse revenue as integer
-        arr = int(revenue)
+        # Parse arr as integer
+        arr = int(arr)
         hierarchy_arr = int(hierarchy_arr)
 
         # Add account information to the dictionary
@@ -28,7 +28,7 @@ with open('accounts.csv', mode='r') as file:
             'name' : name,
             'ultimate_parent_id': ultimate_parent_id,
             'arr': arr
-            'hierarchy_arr' = hierarchy_arr
+            'hierarchy_arr' : hierarchy_arr
         }
         
         # Adds direced edge from account to parent
@@ -44,8 +44,9 @@ with open('accounts.csv', mode='r') as file:
         arr = row['arr']
         hierarchy_arr = row['hierarchy_arr']
  
-    if hierarchy.has_node(node_to_check) and any(pred for pred in G.predecessors(node_to_check)):
-        ultimate_parent_list.append(id)
+    # Checks for 
+    if hierarchy.has_node(row['ultimate_parent_id']) and any(pred for pred in G.predecessors(row['ultimate_parent_id'])):
+        ultimate_parents_list.append(id)
     # Iterate until an ultimate parent is found
     else:
     
